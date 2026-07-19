@@ -1,6 +1,6 @@
 
 
-public class rec {
+public class recursion {
   // print number in increasing order 
   public static void printIncreasing(int n){
    // base case
