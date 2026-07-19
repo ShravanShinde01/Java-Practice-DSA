@@ -102,7 +102,7 @@ public class recursion {
       // System.out.print(factorial(n));
       // System.out.print(fibonacci(n));
       // System.out.print(isSorted(arr,0));
-      // System.out.print(firstOccur(arr,key,0));
+      System.out.print(firstOccur(arr,key,0));
       
   }
 }
