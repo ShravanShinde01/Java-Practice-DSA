@@ -1,6 +1,7 @@
 
 
 public class recursion {
+
   // print number in increasing order 
   public static void printIncreasing(int n){
    // base case
@@ -87,14 +88,54 @@ public class recursion {
   }
 
   // find last occurance
-  public static void lastOccur(int arr[], int key, int i){
-    
+  public static int lastOccur(int arr[], int key, int i){
+    // base case
+    if(i==arr.length){
+      return -1;
+    }
+    int isFound = lastOccur(arr, key, i+1);
+
+    if(isFound==-1 && arr[i]==key){
+      return i;
+    }
+
+    return isFound;
   }
 
-  public static void main(String[] args) {
-      int n = 6;
+  // x^n power calculate
+   public static int power(int x, int n){
+    // base case
+    if(n==0){
+      return 1;
+    }
+      int xnm1 = power(x,n-1);
+      int xn = x * xnm1;
+
+      return xn;
+   } 
+  
+   // optimised power calculate
+   public static int optimisedPower(int x, int n){
+    //base case
+    if(n==0){
+      return 1;
+    }
+     int halfPow = optimisedPower(x,n/2) ;
+     int halfPowerSq = halfPow * halfPow;
+
+     if(n%2!=0){
+        halfPowerSq = x * halfPowerSq;
+   }
+     return halfPowerSq;
+   }
+  
+   public static void main(String[] args) {
+      
       int arr[] = {2,4,6,10,10};
       int key = 10;
+      int x =2;
+      int n = 5;
+
 
       // printIncreasing(n);
       // printDecreasint(n);
@@ -102,7 +143,10 @@ public class recursion {
       // System.out.print(factorial(n));
       // System.out.print(fibonacci(n));
       // System.out.print(isSorted(arr,0));
-      System.out.print(firstOccur(arr,key,0));
+      // System.out.print(firstOccur(arr,key,0));
+      //  System.out.print(lastOccur(arr,key,0));
+      // System.out.print(power(x,n));
+      // System.out.print(optimisedPower(x,n));
       
   }
 }
