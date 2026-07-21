@@ -146,7 +146,7 @@ public class recursion {
       // System.out.print(firstOccur(arr,key,0));
       //  System.out.print(lastOccur(arr,key,0));
       // System.out.print(power(x,n));
-      // System.out.print(optimisedPower(x,n));
+      System.out.print(optimisedPower(x,n));
       
   }
 }
