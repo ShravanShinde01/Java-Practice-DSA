@@ -22,7 +22,6 @@ It does **not** measure the actual execution time in seconds. Instead, it measur
 - Compare two algorithms.
 - Find the most efficient algorithm.
 - Predict performance for large inputs.
-- Ignore hardware differences.
 
 ---
 
