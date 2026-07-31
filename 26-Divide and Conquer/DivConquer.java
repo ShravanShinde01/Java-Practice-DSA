@@ -146,10 +146,10 @@ public static void mergeSort(int arr[],int si, int ei){
       int arr2[] = {4,5,6,7,0,1,2};
       int target = 0;
 
-      // mergeSort(arr,0,arr.length-1);
+      mergeSort(arr,0,arr.length-1);
       // quickSort(arr,0,arr.length-1);
-      // printArr(arr);
-       int taridx =  searchInRorSorArr(arr2, target, 0, arr2.length-1);
-       System.out.print(taridx);
+      printArr(arr);
+      //  int taridx =  searchInRorSorArr(arr2, target, 0, arr2.length-1);
+      //  System.out.print(taridx);
     }
 }
