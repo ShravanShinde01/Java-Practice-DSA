@@ -99,6 +99,7 @@ public class LinkedList {
           return val;
        }
 
+       //remove last node of LL
        public int removeLast(){
          if(size==0){
            System.out.print("LL is empty");
@@ -122,6 +123,59 @@ public class LinkedList {
          size--;
          return val;
        }
+
+       //search in ll , iterative approach
+       public int search(int key){
+            Node temp = head;
+            int i=0;
+
+            while(temp != null){
+              if(temp.data == key){
+                 return i;
+              }
+                temp = temp.next;
+                i++;
+            }
+            return -1;
+       }
+
+       // helper func to search recursively
+       public int helper(Node head, int key){
+            if(head==null){
+               return -1;
+            }
+            if(head.data==key){
+              return 0;
+            }
+
+            int idx = helper(head.next,key);
+            if(idx==-1){
+               return -1;
+            }
+
+            return idx+1;
+       }
+
+       // search in ll using recursion 
+       public int recSearch(int key){
+          return helper(head,key);
+       }
+
+       // reverse the link list
+       public void reverse(){
+         Node prev = null;
+         Node curr = tail = head;
+         Node next;
+
+         while(curr != null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+         }
+         head = prev;
+       }
+
 
     public static void main(String[] args) {
 
@@ -151,6 +205,13 @@ public class LinkedList {
       ll.printLL();
 
       ll.removeLast();
+      ll.printLL();
+
+      System.out.println(ll.search(3));
+
+      System.out.println(ll.recSearch(4));
+
+      ll.reverse();
       ll.printLL();
        
     }
